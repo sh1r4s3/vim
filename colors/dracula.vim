@@ -44,6 +44,7 @@ let s:selection = g:dracula#palette.selection
 let s:subtle    = g:dracula#palette.subtle
 
 let s:cyan      = g:dracula#palette.cyan
+let s:gray      = g:dracula#palette.gray
 let s:green     = g:dracula#palette.green
 let s:orange    = g:dracula#palette.orange
 let s:pink      = g:dracula#palette.pink
@@ -171,6 +172,8 @@ call s:h('DraculaSubtle', s:subtle)
 call s:h('DraculaCyan', s:cyan)
 call s:h('DraculaCyanItalic', s:cyan, s:none, [s:attrs.italic])
 
+call s:h('DraculaGray', s:gray)
+
 call s:h('DraculaGreen', s:green)
 call s:h('DraculaGreenBold', s:green, s:none, [s:attrs.bold])
 call s:h('DraculaGreenItalic', s:green, s:none, [s:attrs.italic])
@@ -278,7 +281,7 @@ call s:h('Conceal', s:cyan, s:none)
 
 " Neovim uses SpecialKey for escape characters only. Vim uses it for that, plus whitespace.
 if has('nvim')
-  hi! link SpecialKey DraculaRed
+  hi! link SpecialKey DraculaGray
   hi! link LspReferenceText DraculaSelection
   hi! link LspReferenceRead DraculaSelection
   hi! link LspReferenceWrite DraculaSelection
@@ -324,7 +327,7 @@ if has('nvim')
     hi! link  @lsp.type.variable DraculaFg
   endif
 else
-  hi! link SpecialKey DraculaPink
+  hi! link SpecialKey DraculaGray
 endif
 
 hi! link Comment DraculaComment
